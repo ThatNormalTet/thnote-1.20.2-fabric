@@ -12,15 +12,17 @@ import net.minecraft.util.Identifier;
 import net.thnote.thnotemod.Thnote;
 
 public class ModBlocks {
-
+    //Crea bloques
     public static final Block RUBY_BLOCK = registerBlock("ruby_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool()));
 
+    //Registra el bloque (wea tecnica)
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(Thnote.MOD_ID, name), block);
     }
 
+    //Registra el item del bloque (wea tecnica)
     private static Item registerBlockItem(String name, Block block){
         return Registry.register(Registries.ITEM, new Identifier(Thnote.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
