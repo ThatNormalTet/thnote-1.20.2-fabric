@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
-import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -14,7 +13,6 @@ import net.thnote.thnotemod.Thnote;
 public class ModItems {
     //Crear items nuevos
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
-
 
     //Añadir items a cada tabulador del creativo
     private static void addItemsToBuildingBlocksTabItemGroup(FabricItemGroupEntries entries) {
