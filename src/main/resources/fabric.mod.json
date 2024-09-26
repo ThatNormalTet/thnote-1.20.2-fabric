@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "thnote",
+	"version": "${version}",
+	"name": "thnote",
+	"description": "Nigger mod",
+	"authors": [
+		"ThatNormalTet"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/thnote/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.thnote.thnotemod.Thnote"
+		],
+		"client": [
+			"net.thnote.thnotemod.ThnoteClient"
+		],
+		"fabric-datagen": [
+			"net.thnote.thnotemod.ThnoteDataGenerator"
+		]
+	},
+	"mixins": [
+		"thnote.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
