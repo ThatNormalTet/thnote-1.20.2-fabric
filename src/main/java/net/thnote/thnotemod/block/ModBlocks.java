@@ -10,11 +10,18 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.thnote.thnotemod.Thnote;
+import net.thnote.thnotemod.block.custom.CrystalizerBlock;
 
 public class ModBlocks {
     //Crea bloques
     public static final Block RUBY_BLOCK = registerBlock("ruby_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool()));
+
+    public static final Block RUBY_ORE = registerBlock("ruby_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool()));
+
+    public static final Block CRYSTALIZER = registerBlock("crystalizer",
+            new CrystalizerBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     //Registra el bloque (wea tecnica)
     private static Block registerBlock(String name, Block block) {

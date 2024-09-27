@@ -18,7 +18,9 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.RUBY)).entries((displayContext, entries) -> {
                         //Añade items al tab en el orden que se añaden aqui
                         entries.add(ModItems.RUBY);
+                        entries.add(ModBlocks.RUBY_ORE);
                         entries.add(ModBlocks.RUBY_BLOCK);
+                        entries.add(ModBlocks.CRYSTALIZER);
                     }).build());
 
     public static void registerItemGroups(){
