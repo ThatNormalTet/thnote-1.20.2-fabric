@@ -7,6 +7,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.thnote.thnotemod.Thnote;
 import net.thnote.thnotemod.block.ModBlocks;
+import net.thnote.thnotemod.block.entity.blocks.CrystalizerBlockEntity;
+import net.thnote.thnotemod.block.entity.blocks.OremizerBlockEntity;
 
 public class ModBlockEntities {
     public static final BlockEntityType<CrystalizerBlockEntity> CRYSTALIZER_BLOCK_ENTITY =

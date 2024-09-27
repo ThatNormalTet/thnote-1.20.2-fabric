@@ -1,4 +1,4 @@
-package net.thnote.thnotemod.block.custom;
+package net.thnote.thnotemod.block.customblock;
 
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -14,7 +14,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.thnote.thnotemod.block.entity.OremizerBlockEntity;
+import net.thnote.thnotemod.block.entity.blocks.OremizerBlockEntity;
 import net.thnote.thnotemod.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 

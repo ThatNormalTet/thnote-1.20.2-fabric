@@ -10,8 +10,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.thnote.thnotemod.Thnote;
-import net.thnote.thnotemod.block.custom.CrystalizerBlock;
-import net.thnote.thnotemod.block.custom.OremizerBlock;
+import net.thnote.thnotemod.block.customblock.CrystalizerBlock;
+import net.thnote.thnotemod.block.customblock.OremizerBlock;
 
 public class ModBlocks {
     //Crea bloques
