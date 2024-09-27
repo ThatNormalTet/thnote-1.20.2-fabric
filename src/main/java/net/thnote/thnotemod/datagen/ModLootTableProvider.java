@@ -15,6 +15,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.RUBY_BLOCK);
         addDrop(ModBlocks.CRYSTALIZER);
         addDrop(ModBlocks.OREMIZER);
+        addDrop(ModBlocks.CONDENSED_EMERALD_BLOCK);
 
         addDrop(ModBlocks.RUBY_ORE, oreDrops(ModBlocks.RUBY_ORE, ModItems.RUBY));
     }

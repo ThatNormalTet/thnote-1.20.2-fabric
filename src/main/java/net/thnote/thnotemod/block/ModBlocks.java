@@ -26,6 +26,9 @@ public class ModBlocks {
 
     public static final Block OREMIZER = registerBlock("oremizer",
             new OremizerBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+    public static final Block CONDENSED_EMERALD_BLOCK = registerBlock("condensed_emerald_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool()));
+
 
     //Registra el bloque (wea tecnica)
     private static Block registerBlock(String name, Block block) {

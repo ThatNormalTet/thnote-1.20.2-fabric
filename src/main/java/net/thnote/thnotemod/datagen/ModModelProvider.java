@@ -17,6 +17,7 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CONDENSED_EMERALD_BLOCK);
 
         blockStateModelGenerator.registerSimpleState(ModBlocks.CRYSTALIZER);
         blockStateModelGenerator.registerSimpleState(ModBlocks.OREMIZER);
