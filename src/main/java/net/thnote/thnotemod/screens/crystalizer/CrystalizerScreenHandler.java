@@ -1,4 +1,4 @@
-package net.thnote.thnotemod.screen;
+package net.thnote.thnotemod.screens.crystalizer;
 
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,6 +11,7 @@ import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.thnote.thnotemod.block.entity.CrystalizerBlockEntity;
+import net.thnote.thnotemod.screens.ModScreenHandler;
 
 public class CrystalizerScreenHandler extends ScreenHandler {
 
@@ -32,7 +33,7 @@ public class CrystalizerScreenHandler extends ScreenHandler {
         this.blockEntity = ((CrystalizerBlockEntity) blockEntity);
 
         this.addSlot(new Slot(inventory, 0, 56, 17));
-        this.addSlot(new Slot(inventory, 1, 111, 30));
+        this.addSlot(new Slot(inventory, 1, 116, 35));
 
         addPlayerHotbar(playerInventory);
         addPlayerInventory(playerInventory);

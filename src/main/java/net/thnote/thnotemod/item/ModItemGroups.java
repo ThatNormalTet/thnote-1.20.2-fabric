@@ -21,6 +21,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RUBY_ORE);
                         entries.add(ModBlocks.RUBY_BLOCK);
                         entries.add(ModBlocks.CRYSTALIZER);
+                        entries.add(ModBlocks.OREMIZER);
                     }).build());
 
     public static void registerItemGroups(){

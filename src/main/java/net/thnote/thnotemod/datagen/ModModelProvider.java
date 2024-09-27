@@ -19,6 +19,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RUBY_BLOCK);
 
         blockStateModelGenerator.registerSimpleState(ModBlocks.CRYSTALIZER);
+        blockStateModelGenerator.registerSimpleState(ModBlocks.OREMIZER);
     }
 
     @Override

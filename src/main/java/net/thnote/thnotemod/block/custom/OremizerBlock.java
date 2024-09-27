@@ -14,16 +14,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
-import net.thnote.thnotemod.block.entity.CrystalizerBlockEntity;
+import net.thnote.thnotemod.block.entity.OremizerBlockEntity;
 import net.thnote.thnotemod.block.entity.ModBlockEntities;
 import org.jetbrains.annotations.Nullable;
 
-public class CrystalizerBlock extends BlockWithEntity implements BlockEntityProvider {
+public class OremizerBlock extends BlockWithEntity implements BlockEntityProvider {
 
     //Define una hitbox custom
-    private static final VoxelShape SHAPE = CrystalizerBlock.createCuboidShape(0,0,0,16, 12, 16);
+    private static final VoxelShape SHAPE = OremizerBlock.createCuboidShape(0,0,0,16, 12, 16);
 
-    public CrystalizerBlock(Settings settings) {
+    public OremizerBlock(Settings settings) {
         super(settings);
     }
 
@@ -40,15 +40,15 @@ public class CrystalizerBlock extends BlockWithEntity implements BlockEntityProv
 
     @Override
     public @Nullable BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new CrystalizerBlockEntity(pos, state);
+        return new OremizerBlockEntity(pos, state);
     }
 
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof CrystalizerBlockEntity) {
-                ItemScatterer.spawn(world, pos, (CrystalizerBlockEntity)blockEntity);
+            if (blockEntity instanceof OremizerBlockEntity) {
+                ItemScatterer.spawn(world, pos, (OremizerBlockEntity)blockEntity);
                 world.updateComparators(pos,this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -58,7 +58,7 @@ public class CrystalizerBlock extends BlockWithEntity implements BlockEntityProv
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = ((CrystalizerBlockEntity) world.getBlockEntity(pos));
+            NamedScreenHandlerFactory screenHandlerFactory = ((OremizerBlockEntity) world.getBlockEntity(pos));
 
             if (screenHandlerFactory != null) {
                 player.openHandledScreen(screenHandlerFactory);
@@ -70,7 +70,7 @@ public class CrystalizerBlock extends BlockWithEntity implements BlockEntityProv
 
     @Override
     public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, ModBlockEntities.CRYSTALIZER_BLOCK_ENTITY,
+        return validateTicker(type, ModBlockEntities.OREMIZER_BLOCK_ENTITY,
                 (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 }

@@ -12,6 +12,9 @@ public class ModBlockEntities {
     public static final BlockEntityType<CrystalizerBlockEntity> CRYSTALIZER_BLOCK_ENTITY =
             Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Thnote.MOD_ID, "crystalizer"),
                     FabricBlockEntityTypeBuilder.create(CrystalizerBlockEntity::new, ModBlocks.CRYSTALIZER).build());
+    public static final BlockEntityType<OremizerBlockEntity> OREMIZER_BLOCK_ENTITY =
+            Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Thnote.MOD_ID, "oremizer"),
+                    FabricBlockEntityTypeBuilder.create(OremizerBlockEntity::new, ModBlocks.OREMIZER).build());
 
     public static void registerBlockEntities(){
         Thnote.LOGGER.info("Registering Block Entities for " + Thnote.MOD_ID);

@@ -3,7 +3,9 @@
   "block.thnote.ruby_block": "Ruby Block",
   "block.thnote.ruby_ore": "Ruby Ore",
   "block.thnote.crystalizer": "Crystalizer",
+  "block.thnote.oremizer": "Oremizer",
   "crystalizer": "Crystalizer",
+  "oremizer": "Oremizer",
 
   "itemgroup.thnote": "ThNoTe"
 }

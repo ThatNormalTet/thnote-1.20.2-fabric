@@ -11,6 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.thnote.thnotemod.Thnote;
 import net.thnote.thnotemod.block.custom.CrystalizerBlock;
+import net.thnote.thnotemod.block.custom.OremizerBlock;
 
 public class ModBlocks {
     //Crea bloques
@@ -22,6 +23,9 @@ public class ModBlocks {
 
     public static final Block CRYSTALIZER = registerBlock("crystalizer",
             new CrystalizerBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+
+    public static final Block OREMIZER = registerBlock("oremizer",
+            new OremizerBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     //Registra el bloque (wea tecnica)
     private static Block registerBlock(String name, Block block) {

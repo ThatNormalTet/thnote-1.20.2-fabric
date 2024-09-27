@@ -1,4 +1,4 @@
-package net.thnote.thnotemod.screen;
+package net.thnote.thnotemod.screens.oremizer;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.DrawContext;
@@ -9,12 +9,13 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.thnote.thnotemod.Thnote;
 
-public class CrystalizerScreen extends HandledScreen<CrystalizerScreenHandler> {
+public class OremizerScreen extends HandledScreen<OremizerScreenHandler> {
 
-    private static final Identifier TEXTURE = new Identifier(Thnote.MOD_ID, "textures/gui/crystalizer.png");
+    //Identifica las texturas del inventario
+    private static final Identifier TEXTURE = new Identifier(Thnote.MOD_ID, "textures/gui/oremizer.png");
     private static final Identifier PROGRESS = new Identifier(Thnote.MOD_ID, "textures/gui/progress.png");
 
-    public CrystalizerScreen(CrystalizerScreenHandler handler, PlayerInventory inventory, Text title) {
+    public OremizerScreen(OremizerScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
     }
 
@@ -23,6 +24,7 @@ public class CrystalizerScreen extends HandledScreen<CrystalizerScreenHandler> {
         super.init();
     }
 
+    //Dibuja la textura del inventario en medio de la pantalla
     @Override
     protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
@@ -34,9 +36,9 @@ public class CrystalizerScreen extends HandledScreen<CrystalizerScreenHandler> {
         context.drawTexture(TEXTURE, x, y, 0, 0, backgroundWidth, backgroundHeight);
 
         renderProgressArrow(context, x, y);
-
     }
 
+    //Dibuja la flechita
     private void renderProgressArrow(DrawContext context, int x, int y) {
         if(handler.isCrafting()){
             context.drawTexture(PROGRESS, x + 79, y + 35, 0, 0, handler.getScaledProgress(), 16, 24, 16);
