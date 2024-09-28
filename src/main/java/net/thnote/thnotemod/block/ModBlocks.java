@@ -30,6 +30,7 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool()));
 
 
+
     //Registra el bloque (wea tecnica)
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

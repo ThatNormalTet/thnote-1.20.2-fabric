@@ -6,11 +6,13 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -22,8 +24,12 @@ import net.thnote.thnotemod.block.ModBlocks;
 import net.thnote.thnotemod.block.entity.ImplementedInventory;
 import net.thnote.thnotemod.block.entity.ModBlockEntities;
 import net.thnote.thnotemod.item.ModItems;
+import net.thnote.thnotemod.recipe.CrystalizerRecipe;
+import net.thnote.thnotemod.recipe.OremizerRecipe;
 import net.thnote.thnotemod.screens.oremizer.OremizerScreenHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class OremizerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
@@ -127,11 +133,12 @@ public class OremizerBlockEntity extends BlockEntity implements ExtendedScreenHa
     }
 
     private void craftItem() {
+        Optional<RecipeEntry<OremizerRecipe>> recipe = getCurrentRecipe();
         this.removeStack(INPUT_SLOT, 1);
         this.removeStack(INPUT_SLOT2, 1);
-        ItemStack result = new ItemStack(ModBlocks.RUBY_ORE);
 
-        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
     }
 
     private boolean hasCraftingFinished() {
@@ -143,10 +150,19 @@ public class OremizerBlockEntity extends BlockEntity implements ExtendedScreenHa
     }
 
     private boolean hasRecipe() {
-        ItemStack result = new ItemStack(ModBlocks.RUBY_ORE);
-        boolean hasInput = getStack(INPUT_SLOT).getItem() == ModItems.RUBY && getStack(INPUT_SLOT2).getItem() == Items.STONE;
+        Optional<RecipeEntry<OremizerRecipe>> recipe = getCurrentRecipe();
 
-        return hasInput && canInsertAmountIntoOutputSlot(result) && canInserItemIntoOutputSlot(result.getItem());
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null))
+                && canInserItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
+    }
+
+    private Optional<RecipeEntry<OremizerRecipe>> getCurrentRecipe() {
+        SimpleInventory inv = new SimpleInventory(this.size());
+        for (int i =0; i < this.size(); i++){
+            inv.setStack(i, this.getStack(i));
+        }
+
+        return getWorld().getRecipeManager().getFirstMatch(OremizerRecipe.Type.INSTANCE, inv, getWorld());
     }
 
     private boolean canInserItemIntoOutputSlot(Item item) {

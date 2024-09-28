@@ -28,5 +28,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY, RecipeCategory.DECORATIONS,
                 ModBlocks.RUBY_BLOCK);
+
     }
 }

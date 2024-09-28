@@ -6,10 +6,12 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -20,8 +22,11 @@ import net.minecraft.world.World;
 import net.thnote.thnotemod.block.entity.ImplementedInventory;
 import net.thnote.thnotemod.block.entity.ModBlockEntities;
 import net.thnote.thnotemod.item.ModItems;
+import net.thnote.thnotemod.recipe.CrystalizerRecipe;
 import net.thnote.thnotemod.screens.crystalizer.CrystalizerScreenHandler;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Optional;
 
 public class CrystalizerBlockEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
 
@@ -124,10 +129,11 @@ public class CrystalizerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private void craftItem() {
+        Optional<RecipeEntry<CrystalizerRecipe>> recipe = getCurrentRecipe();
         this.removeStack(INPUT_SLOT, 1);
-        ItemStack result = new ItemStack(ModItems.RUBY);
 
-        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+                getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
     }
 
     private boolean hasCraftingFinished() {
@@ -139,10 +145,19 @@ public class CrystalizerBlockEntity extends BlockEntity implements ExtendedScree
     }
 
     private boolean hasRecipe() {
-        ItemStack result = new ItemStack(ModItems.RUBY);
-        boolean hasInput = getStack(INPUT_SLOT).getItem() == ModItems.RUBY;
+        Optional<RecipeEntry<CrystalizerRecipe>> recipe = getCurrentRecipe();
 
-        return hasInput && canInsertAmountIntoOutputSlot(result) && canInserItemIntoOutputSlot(result.getItem());
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null))
+                && canInserItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
+    }
+
+    private Optional<RecipeEntry<CrystalizerRecipe>> getCurrentRecipe() {
+        SimpleInventory inv = new SimpleInventory(this.size());
+        for (int i =0; i < this.size(); i++){
+            inv.setStack(i, this.getStack(i));
+        }
+
+        return getWorld().getRecipeManager().getFirstMatch(CrystalizerRecipe.Type.INSTANCE, inv, getWorld());
     }
 
     private boolean canInserItemIntoOutputSlot(Item item) {

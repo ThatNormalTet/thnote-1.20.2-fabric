@@ -1,0 +1,12 @@
+{
+  "type": "thnote:crystalizer",
+  "ingredients": [
+    {
+      "item": "thnote:ruby_ore"
+    }
+  ],
+  "output": {
+    "item": "thnote:ruby",
+    "count": 2
+  }
+}
