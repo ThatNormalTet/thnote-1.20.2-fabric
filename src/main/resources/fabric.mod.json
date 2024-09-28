@@ -23,6 +23,9 @@
 		],
 		"fabric-datagen": [
 			"net.thnote.thnotemod.ThnoteDataGenerator"
+		],
+		"rei_client": [
+			"net.thnote.thnotemod.compat.ThnoteREIClientPlugin"
 		]
 	},
 	"mixins": [
