@@ -1,0 +1,15 @@
+{
+  "type": "thnote:oremizer",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:stone"
+    }
+  ],
+  "output": {
+    "item": "minecraft:diamond_ore",
+    "count": 2
+  }
+}

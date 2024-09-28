@@ -11,5 +11,9 @@ public class ModRecipes {
                 CrystalizerRecipe.Serializer.INSTANCE);
         Registry.register(Registries.RECIPE_TYPE, new Identifier(Thnote.MOD_ID, CrystalizerRecipe.Type.ID),
                 CrystalizerRecipe.Type.INSTANCE);
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(Thnote.MOD_ID, OremizerRecipe.Serializer.ID),
+                OremizerRecipe.Serializer.INSTANCE);
+        Registry.register(Registries.RECIPE_TYPE, new Identifier(Thnote.MOD_ID, OremizerRecipe.Type.ID),
+                OremizerRecipe.Type.INSTANCE);
     }
 }

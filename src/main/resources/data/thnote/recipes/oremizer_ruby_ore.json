@@ -1,0 +1,15 @@
+{
+  "type": "thnote:oremizer",
+  "ingredients": [
+    {
+      "item": "thnote:ruby"
+    },
+    {
+      "item": "minecraft:stone"
+    }
+  ],
+  "output": {
+    "item": "thnote:ruby_ore",
+    "count": 2
+  }
+}
