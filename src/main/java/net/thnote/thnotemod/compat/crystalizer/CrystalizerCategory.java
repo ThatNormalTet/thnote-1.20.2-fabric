@@ -1,4 +1,4 @@
-package net.thnote.thnotemod.compat;
+package net.thnote.thnotemod.compat.crystalizer;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;
@@ -47,14 +47,14 @@ public class CrystalizerCategory implements DisplayCategory<BasicDisplay> {
 
 
         //Añadir mas para mas inputs
-        widgets.add(Widgets.createSlot(new Point(startPoint.x, startPoint.y ))
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 56, startPoint.y + 17))
                 .entries(display.getInputEntries().get(0)));
 
         //Añadir mas para mas outputs
-        widgets.add(Widgets.createSlot(new Point(startPoint.x + 20, startPoint.y))
+        widgets.add(Widgets.createSlot(new Point(startPoint.x + 116, startPoint.y + 35))
                 .markOutput().entries(display.getOutputEntries().get(0)));
 
-        return DisplayCategory.super.setupDisplay(display, bounds);
+        return widgets;
     }
 
     @Override

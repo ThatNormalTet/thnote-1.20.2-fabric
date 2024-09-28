@@ -1,4 +1,4 @@
-package net.thnote.thnotemod.compat;
+package net.thnote.thnotemod.compat.crystalizer;
 
 import me.shedaniel.rei.api.common.category.CategoryIdentifier;
 import me.shedaniel.rei.api.common.display.basic.BasicDisplay;
