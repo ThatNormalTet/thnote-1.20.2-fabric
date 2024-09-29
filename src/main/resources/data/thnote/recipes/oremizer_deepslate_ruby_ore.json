@@ -1,0 +1,15 @@
+{
+  "type": "thnote:oremizer",
+  "ingredients": [
+    {
+      "item": "thnote:ruby"
+    },
+    {
+      "item": "minecraft:deepslate"
+    }
+  ],
+  "output": {
+    "item": "thnote:deepslate_ruby_ore",
+    "count": 2
+  }
+}

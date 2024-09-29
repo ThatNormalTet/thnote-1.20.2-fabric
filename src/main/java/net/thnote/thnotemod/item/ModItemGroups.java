@@ -19,10 +19,12 @@ public class ModItemGroups {
                         //Añade items al tab en el orden que se añaden aqui
                         entries.add(ModItems.RUBY);
                         entries.add(ModBlocks.RUBY_ORE);
+                        entries.add(ModBlocks.DEEPSLATE_RUBY_ORE);
                         entries.add(ModBlocks.RUBY_BLOCK);
                         entries.add(ModBlocks.CRYSTALIZER);
                         entries.add(ModBlocks.OREMIZER);
                         entries.add(ModBlocks.CONDENSED_EMERALD_BLOCK);
+                        entries.add(ModItems.MAGIC_WAND);
                     }).build());
 
     public static void registerItemGroups(){

@@ -19,13 +19,17 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool()));
 
     public static final Block RUBY_ORE = registerBlock("ruby_ore",
-            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).requiresTool()));
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE).requiresTool()));
+
+    public static final Block DEEPSLATE_RUBY_ORE = registerBlock("deepslate_ruby_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE).requiresTool()));
 
     public static final Block CRYSTALIZER = registerBlock("crystalizer",
             new CrystalizerBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
 
     public static final Block OREMIZER = registerBlock("oremizer",
             new OremizerBlock(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).nonOpaque()));
+
     public static final Block CONDENSED_EMERALD_BLOCK = registerBlock("condensed_emerald_block",
             new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK).requiresTool()));
 

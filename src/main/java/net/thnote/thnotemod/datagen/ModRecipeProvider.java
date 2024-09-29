@@ -13,7 +13,7 @@ import java.util.List;
 public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static List<ItemConvertible> RUBY_SMELTABLES = List.of(ModItems.RUBY,
-            ModBlocks.RUBY_ORE);
+            ModBlocks.RUBY_ORE, ModBlocks.DEEPSLATE_RUBY_ORE);
 
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -26,8 +26,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerBlasting(exporter, RUBY_SMELTABLES, RecipeCategory.MISC, ModItems.RUBY,
                 0.7f, 100, "ruby");
 
+
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RUBY, RecipeCategory.DECORATIONS,
                 ModBlocks.RUBY_BLOCK);
-
     }
 }
