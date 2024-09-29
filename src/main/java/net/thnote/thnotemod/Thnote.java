@@ -14,6 +14,10 @@ import org.slf4j.LoggerFactory;
 public class Thnote implements ModInitializer {
 	public static final String MOD_ID = "thnote";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	// Direccion hacia la que mira el jugador:
+	// X= -sin((float) (user.getYaw()*rad))*abs(cos((float) (user.getPitch()*rad)))
+	// Y= -sin((float) (user.getPitch()*rad))
+	// Z= cos((float) (user.getYaw()*rad))*abs(cos((float) (user.getPitch()*rad)))
 
 	@Override
 	public void onInitialize() {

@@ -28,5 +28,6 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.RUBY, Models.GENERATED);
         itemModelGenerator.register(ModItems.UOH, Models.GENERATED);
+        itemModelGenerator.register(ModItems.MAGIC_WAND, Models.GENERATED);
     }
 }

@@ -1,7 +1,5 @@
 package net.thnote.thnotemod.item;
 
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.item.ItemStack;
@@ -13,12 +11,13 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.thnote.thnotemod.Thnote;
 
+import static net.minecraft.util.math.MathHelper.*;
+
+
 public class MagicWand extends SnowballItem {
     public MagicWand(Settings settings) {
         super(settings);
     }
-
-
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
@@ -34,8 +33,8 @@ public class MagicWand extends SnowballItem {
                 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
         );
         if (!world.isClient) {
-            Thnote.LOGGER.info("" + user.getPitch() + " " + user.getYaw());
-            FireballEntity fireballEntity = new FireballEntity(world, user, -user.getYaw(), -user.getPitch(), -user.getYaw(), 5);
+            double rad = 3.1415/180;
+            FireballEntity fireballEntity = new FireballEntity(world, user, -sin((float) (user.getYaw()*rad))*abs(cos((float) (user.getPitch()*rad))), -sin((float) (user.getPitch()*rad)), cos((float) (user.getYaw()*rad))*abs(cos((float) (user.getPitch()*rad))), 5);
             fireballEntity.setPosition(user.getX(), user.getY()+1, user.getZ());
             world.spawnEntity(fireballEntity);
         }

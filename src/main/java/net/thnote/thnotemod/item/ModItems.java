@@ -17,7 +17,7 @@ public class ModItems {
     //Crear items nuevos
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item UOH = registerItem("uoh", new Item(new FabricItemSettings().food(ModFoodComponents.UOH)));
-    public static final Item MAGIC_WAND = registerItem("magic_wand", new MagicWand(new FabricItemSettings()));
+    public static final Item MAGIC_WAND = registerItem("magic_wand", new MagicWand(new FabricItemSettings().maxCount(1)));
 
     //Añadir items a cada tabulador del creativo
     private static void addItemsToBuildingBlocksTabItemGroup(FabricItemGroupEntries entries) {
