@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "thnote:ruby"
+    },
+    "S": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    "R",
+    "R",
+    "S"
+  ],
+  "result": {
+    "item": "thnote:magic_wand"
+  },
+  "show_notification": true
+}

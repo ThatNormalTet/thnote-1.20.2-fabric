@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "thnote:ruby"
+    },
+    "S": {
+      "item": "minecraft:blaze_rod"
+    }
+  },
+  "pattern": [
+    " RR",
+    "R S",
+    "  S"
+  ],
+  "result": {
+    "item": "thnote:scythe"
+  },
+  "show_notification": true
+}

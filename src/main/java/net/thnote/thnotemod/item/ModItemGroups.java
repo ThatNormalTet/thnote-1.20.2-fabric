@@ -25,6 +25,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.OREMIZER);
                         entries.add(ModBlocks.CONDENSED_EMERALD_BLOCK);
                         entries.add(ModItems.MAGIC_WAND);
+                        entries.add(ModItems.SCYTHE);
                     }).build());
 
     public static void registerItemGroups(){
