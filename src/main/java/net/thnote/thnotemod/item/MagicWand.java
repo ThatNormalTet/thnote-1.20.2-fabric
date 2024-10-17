@@ -35,7 +35,7 @@ public class MagicWand extends SnowballItem {
         );
         if (!world.isClient) {
              Vec3d vec3d = Vec3d.fromPolar(user.getPitch(), user.getYaw());
-            FireballEntity fireballEntity = new FireballEntity(world, user, vec3d.x, vec3d.y, vec3d.z, 45);
+            FireballEntity fireballEntity = new FireballEntity(world, user, vec3d.x, vec3d.y, vec3d.z, 5);
             fireballEntity.setPosition(user.getX(), user.getY()+1, user.getZ());
             world.spawnEntity(fireballEntity);
         }
