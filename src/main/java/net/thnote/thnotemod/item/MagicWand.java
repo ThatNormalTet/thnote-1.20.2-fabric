@@ -8,6 +8,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.thnote.thnotemod.Thnote;
 
@@ -33,8 +34,8 @@ public class MagicWand extends SnowballItem {
                 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
         );
         if (!world.isClient) {
-            double rad = 3.1415/180;
-            FireballEntity fireballEntity = new FireballEntity(world, user, -sin((float) (user.getYaw()*rad))*abs(cos((float) (user.getPitch()*rad))), -sin((float) (user.getPitch()*rad)), cos((float) (user.getYaw()*rad))*abs(cos((float) (user.getPitch()*rad))), 5);
+             Vec3d vec3d = Vec3d.fromPolar(user.getPitch(), user.getYaw());
+            FireballEntity fireballEntity = new FireballEntity(world, user, vec3d.x, vec3d.y, vec3d.z, 45);
             fireballEntity.setPosition(user.getX(), user.getY()+1, user.getZ());
             world.spawnEntity(fireballEntity);
         }
